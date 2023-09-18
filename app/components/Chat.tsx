@@ -30,7 +30,7 @@ const Chat = () => {
     setLoading(false);
   };
 
-  const onSubmit = (event) => {
+  const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     
     if (submitType === 'text') {
