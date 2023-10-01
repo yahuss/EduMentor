@@ -8,10 +8,10 @@ export default function Home() {
     <main className="App">
       <div className='container'>
         <div className='logoBox'>
-          <Image src="/logo.png" alt="SuperViral.ai logo" width="380" height="90" />
-          <p>This is an interface to talk to the Last Codebender. Ask him anything you want.</p>
+        <Image src="/AISERR3.png" alt="AISERR logo" width="400" height="200"/>
+          <p> Welcome from the AI Senior Engineer CV Reviewer. Here you can review and take your tips onto your resume.</p>
+          <Chat />
         </div>
-        <Chat />
       </div>
     </main>
   )
