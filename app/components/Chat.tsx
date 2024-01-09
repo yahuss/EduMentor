@@ -14,7 +14,7 @@ const Chat = () => {
 
   const getImageData = async () => {
     try {
-      const response = await fetch('/api/replicate', {
+      const response = await fetch('/api/dall-e', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

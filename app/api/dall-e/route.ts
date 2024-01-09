@@ -10,13 +10,20 @@ const openai = new OpenAI({
 export const runtime = 'edge';
 
 export async function POST(req: Request, res: Response) {
+  if (req.method !== 'POST') {
+    return new Response('Method not allowed', {
+      status: 405,
+    });
+  }
+
   // Extract the `prompt` from the body of the request
-  console.log('req.body:', req.body);
-  const { prompt } = await req.json();
+  const body = await req.text();
+  const { prompt } = JSON.parse(body);
   
   try {
-    // Ask Dall-E to generat an image based on the prompt
+    // Ask Dall-E to generate an image based on the prompt
     const response = await openai.images.generate({
+      model: "dall-e-3",
       prompt: prompt,
       n: 1,
       size: "1024x1024",
