@@ -47,6 +47,8 @@ const Chat = () => {
     assistant: '#e02aff',
     function: '#fff',
     system: '#fff',
+    tool: '#fff',
+    data: '#fff'
   }
 
   const renderResponse = () => {
