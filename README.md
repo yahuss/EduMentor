@@ -1,16 +1,16 @@
 # Codebender AI Template
 
-This project is template code you can use to start any of your AI projects.
+This project is a template code to start any AI project.
 
-It's a chat interface that allows you to talk with the Last Codebender. You can send him text messages by clicking on the text button, or request an AI art image by clicking on the image button.
+It's a chat interface that allows you to talk with the Last Codebender. You can send him text messages by clicking on the text button or request an AI art image by clicking on the image button.
 
-This project is built using Nextjs. It utilizes the OpenAI `gpt-3.5-turbo` model for chat completion, and Dall-E for image generation.
+This project is built using Nextjs. It utilizes the OpenAI GPT4 for chat completion and Replicate for image generation.
 
 <img src="app-demo.gif" alt="app demo" width=600>
 
 ## Getting Started
 
-First, duplicate the `.env` file into a new file named `.env.local`. Update the value of your OpenAI API key there.
+First, duplicate the `.env` file into a new file named `.env.local`. Update the value of your OpenAI and Replicate API keys there.
 
 The first time you are running this project, you will need to install the dependencies. Run this command in your terminal:
 
