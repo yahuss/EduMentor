@@ -10,7 +10,7 @@ This project is built using Nextjs. It utilizes the OpenAI GPT4 for chat complet
 
 ## Getting Started
 
-First, duplicate the `.env` file into a new file named `.env.local`. Update the value of your OpenAI and Replicate API keys there.
+First, duplicate the `.env` file into a new file named `.env.local`. Update the value of your [OpenAI API key](https://platform.openai.com/api-keys) and [Replicate API key](https://replicate.com/account/api-tokens) there.
 
 The first time you are running this project, you will need to install the dependencies. Run this command in your terminal:
 
