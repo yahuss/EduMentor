@@ -8,8 +8,8 @@ export default function Home() {
     <main className="App">
       <div className='container'>
         <div className='logoBox'>
-          <Image src="/logo.png" alt="SuperViral.ai logo" width="380" height="90" />
-          <p>This is an interface to talk to the Last Codebender. Ask him anything you want.</p>
+          <Image id="logo" src="/logo3.png" alt="AI Learning Assistant" width="100" height="90" />
+          <p>Your personal AI learning assistant. Ask questions, get explanations, or practice with generated problems.</p>
         </div>
         <Chat />
       </div>
