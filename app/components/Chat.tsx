@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useChat } from 'ai/react';
+import { useChat } from '@ai-sdk/react';
 import Image from 'next/image';
 
 const Chat = () => {
@@ -9,7 +9,7 @@ const Chat = () => {
   const [error, setError] = useState("");
 
   const { messages, input, handleInputChange, handleSubmit } = useChat({
-    api: '/api/openai',
+    api: '/api/chat',
     initialMessages: [
       {
         id: '1',

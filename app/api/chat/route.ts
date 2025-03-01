@@ -1,22 +1,23 @@
-import OpenAI from 'openai';
-import { OpenAIStream, StreamingTextResponse } from 'ai';
+import { streamText } from 'ai';
+import { createAnthropic } from '@ai-sdk/anthropic';
 
-// Create an OpenAI API client
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY || '',
+
+const anthropic = createAnthropic({
+  apiKey: process.env.ANTHROPIC_API_KEY
 });
+
+export const maxDuration = 30;
 
 // IMPORTANT! Set the runtime to edge
 export const runtime = 'edge';
 
-export async function POST(req: Request, res: Response) {
-  // Extract the `prompt` from the body of the request
+export async function POST(req: Request) {
   const { messages } = await req.json();
   console.log('messages:', messages);
   
-  // Ask OpenAI for a streaming chat completion given the prompt
-  const response = await openai.chat.completions.create({
-    model: "gpt-3.5-turbo",
+  // Ask Anthropic for a streaming chat completion given the prompt
+  const result = streamText({
+    model: anthropic('claude-3-7-sonnet-20250219'),
     messages: [
       {
         role: "system",
@@ -27,12 +28,9 @@ export async function POST(req: Request, res: Response) {
       },
       ...messages,
     ],
-    stream: true,
     temperature: 0.5,
   });
 
   // Convert the response into a friendly text-stream
-  const stream = OpenAIStream(response);
-  // Respond with the stream
-  return new StreamingTextResponse(stream);
+  return result.toDataStreamResponse();
 }
